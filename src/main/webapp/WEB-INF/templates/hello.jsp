@@ -5,7 +5,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/favicon.ico" />
+<link href='${pageContext.request.contextPath}/favicon.ico' rel='icon' type='image/x-icon'/>
 <title>Hi </title>
 </head>
 <body>
