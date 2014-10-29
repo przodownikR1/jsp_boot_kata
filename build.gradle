@@ -30,6 +30,7 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-tomcat") 
+    compile("org.springframework.boot:spring-boot-starter-logging")
    // compile ("org.springframework:spring-webmvc:4.1.0.RELEASE")
    // compile ("org.springframework:spring-web:4.1.0.RELEASE")
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
