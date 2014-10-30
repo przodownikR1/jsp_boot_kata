@@ -1,4 +1,4 @@
-package pl.java.scalatech;
+package pl.java.scalatech.web;
 
 import java.time.LocalDate;
 

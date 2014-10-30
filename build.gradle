@@ -1,6 +1,9 @@
 buildscript {
     ext {
         springBootVersion = '1.1.8.RELEASE'
+        lombokVersion = "1.12.4"
+        guavaVersion = "16.0.1"
+        festAssertVersion = "1.4"
     }
     repositories {
         mavenCentral()
@@ -33,11 +36,14 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-logging")
    // compile ("org.springframework:spring-webmvc:4.1.0.RELEASE")
    // compile ("org.springframework:spring-web:4.1.0.RELEASE")
+    compile("org.projectlombok:lombok:${lombokVersion}")
+    compile("com.google.guava:guava:${guavaVersion}")
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
     compile("javax.servlet:jstl")
     testCompile("junit:junit:4.11")
     testCompile ("org.springframework:spring-test:4.1.0.RELEASE")
-    
+    testCompile("com.googlecode.catch-exception:catch-exception:1.2.0")
+    testCompile("org.easytesting:fest-assert:${festAssertVersion}")
 }
 
 eclipse {
