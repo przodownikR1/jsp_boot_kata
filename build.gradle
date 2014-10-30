@@ -40,7 +40,7 @@ dependencies {
     compile("org.projectlombok:lombok:${lombokVersion}")
     compile("com.google.guava:guava:${guavaVersion}")
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
-    compile("javax.servlet:jstl")
+    runtime("javax.servlet:jstl")
     testCompile("junit:junit:4.11")
     testCompile ("org.springframework:spring-test:4.1.0.RELEASE")
     testCompile("com.googlecode.catch-exception:catch-exception:1.2.0")
