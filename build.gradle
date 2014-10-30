@@ -1,19 +1,13 @@
 buildscript {
-    ext {
-        springBootVersion = '1.1.8.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
+    ext { springBootVersion = '1.1.8.RELEASE' }
+    repositories { mavenCentral() }
+    dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'spring-boot' 
+apply plugin: 'spring-boot'
 
 jar {
     baseName = 'jsp_boot'
@@ -22,23 +16,18 @@ jar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
+repositories { mavenCentral() }
 
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-tomcat") 
+    compile("org.springframework.boot:spring-boot-starter-tomcat")
     runtime("org.apache.tomcat.embed:tomcat-embed-jasper")
     runtime("javax.servlet:jstl")
     testCompile("junit:junit:4.11")
     testCompile ("org.springframework:spring-test:4.1.0.RELEASE")
-    
 }
 
 
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
-}
+task wrapper(type: Wrapper) { gradleVersion = '2.0' }
