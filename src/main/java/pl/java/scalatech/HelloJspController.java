@@ -19,10 +19,4 @@ class HelloJspController {
         return "hello";
     }
 
-    @RequestMapping("favicon.ico")
-    String favicon() {
-        return "forward:/resources/favicon.ico";
-    }
-    
-
 }
