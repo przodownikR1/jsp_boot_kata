@@ -2,6 +2,9 @@ package pl.java.scalatech.repository.country.impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
+
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.stereotype.Repository;
 
@@ -11,7 +14,10 @@ import pl.java.scalatech.repository.country.CountryRepository;
 import com.google.common.collect.Lists;
 
 @Repository
+@Slf4j
 public class CountryRepositoryImpl implements CountryRepository {
+
+    AtomicLong ids = new AtomicLong();
 
     List<Country> countries = Lists.newArrayList();
 
@@ -22,6 +28,13 @@ public class CountryRepositoryImpl implements CountryRepository {
 
     @Override
     public Country save(Country country) {
+        Optional<Country> result = countries.stream().filter(d -> d.getId() == country.getId()).findFirst();
+        if (result.isPresent()) {
+            countries.remove(result.get());
+        }
+        if (country.getId() == null) {
+            country.setId(ids.getAndIncrement());
+        }
         countries.add(country);
         return country;
     }
