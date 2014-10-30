@@ -30,8 +30,8 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-tomcat") 
-    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
-    compile("javax.servlet:jstl")
+    runtime("org.apache.tomcat.embed:tomcat-embed-jasper")
+    runtime("javax.servlet:jstl")
     testCompile("junit:junit:4.11")
     testCompile ("org.springframework:spring-test:4.1.0.RELEASE")
     
