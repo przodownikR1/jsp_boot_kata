@@ -1,16 +1,12 @@
 package pl.java.scalatech.repository.country;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import pl.java.scalatech.domain.Country;
 
-public interface CountryRepository {
+public interface CountryRepository extends JpaRepository<Country, Long>{
 
-    List<Country> getList();
-    Country save(Country country);
-    void remove(Country country);
-    Country findById(Long id);
+
     Country findByName(String name);
-    long count();
-    void removeAll();
+    
 }

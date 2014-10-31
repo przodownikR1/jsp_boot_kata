@@ -28,7 +28,7 @@ public class CountryController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String getAllCountry(Model model) {
-        model.addAttribute(countryRepository.getList());
+        model.addAttribute(countryRepository.findAll());
         return COUNTRY_VIEW;
     }
     @RequestMapping(method = RequestMethod.GET)
@@ -43,7 +43,7 @@ public class CountryController {
         if (id == null) {
             model.addAttribute("country", new Country());
         }else{
-            model.addAttribute("country", countryRepository.findById(id));
+            model.addAttribute("country", countryRepository.findOne(id));
         }
         
         return COUNTRY_EDIT;
@@ -51,8 +51,8 @@ public class CountryController {
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable("id") Long id, Model model) {
-        Country country = countryRepository.findById(id);
-        countryRepository.remove(country);
+        Country country = countryRepository.findOne(id);
+        countryRepository.delete(country);
         return COUNTRY_REDIRECT;
     }
 
