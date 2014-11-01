@@ -4,6 +4,8 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import liquibase.integration.spring.SpringLiquibase;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
@@ -60,5 +62,14 @@ public class DsConfig {
         transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         transactionManager.setDataSource(dataSource());
         return transactionManager;
+    }
+    @Bean
+    public SpringLiquibase liquibase() {
+      
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setDataSource(dataSource());
+        liquibase.setChangeLog("classpath:liquibase/master.xml");
+        liquibase.setContexts("development, production");
+        return liquibase;
     }
 }
