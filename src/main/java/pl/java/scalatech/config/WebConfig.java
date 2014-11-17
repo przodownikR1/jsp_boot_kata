@@ -51,6 +51,7 @@ public class WebConfig extends WebMvcConfigurationSupport{
     @Bean(name = AbstractApplicationContext.MESSAGE_SOURCE_BEAN_NAME)
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        System.err.println("sssssssssssssssssssssssssssssss");
         messageSource.setBasename("i18n/messages");
         messageSource.setUseCodeAsDefaultMessage(true);
         messageSource.setDefaultEncoding("UTF-8");

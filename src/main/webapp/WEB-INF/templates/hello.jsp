@@ -10,13 +10,15 @@
 </head>
 <body>
 
-<spring:message code="hello" var="hello1" >
+<spring:message code="hello.message" var="hello1" />
 
+Message : <spring:message  code="hello.message" text="hey"/>
+<br />
 <c:out value="${hello1}"/>
-
+<br />
 <c:out value="${time}"/>
-
+<br />
 <c:out value="${message}"/>
-
+<br />
 </body>
 </html>
