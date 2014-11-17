@@ -9,6 +9,11 @@
 <title>Hi </title>
 </head>
 <body>
+
+<spring:message code="hello" var="hello1" >
+
+<c:out value="${hello1}"/>
+
 <c:out value="${time}"/>
 
 <c:out value="${message}"/>

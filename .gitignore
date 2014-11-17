@@ -82,3 +82,4 @@ gc.log
 /mongoDB-springBoot.log
 /file_from_fd_store.png
 /jsp_simple_boot.log
+/thymeleaf_simple_boot.log
