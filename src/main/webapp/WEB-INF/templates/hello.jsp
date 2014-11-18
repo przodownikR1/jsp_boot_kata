@@ -20,5 +20,7 @@ Message : <spring:message  code="hello.message" text="hey"/>
 <br />
 <c:out value="${message}"/>
 <br />
+
+<br />
 </body>
 </html>
